@@ -1,0 +1,250 @@
+.accountMenu{
+    position: absolute;
+    top: 65px;
+    right: 5px;
+    width: 200px;
+    height: auto;
+    background-color: #FFF;
+}
+
+.accountMenuItem{
+    width: 100%;
+    color: #000;
+    font-family: 'Inter';
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    padding: 16px 16px;
+    cursor: pointer;
+}
+
+.accountMenuItem:hover{
+    background: azure;
+}
+
+.modalOver{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background: rgba(83, 83, 83, 0.50);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalContainer{
+    background-color: #FFF;
+    width: 600px;
+    height: 500px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 40px 20px 40px
+}
+
+.modalHeader{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 60px;
+}
+
+.modalTitle{
+    color: #000;
+    font-family: 'Inter';
+    font-size: 2.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.modalTitleCancel{
+    font-family: 'Inter';
+    font-size: 2.6rem;
+    font-style: normal;
+    line-height: normal;
+    font-weight: 500;
+    color: #a10000;
+    cursor: pointer
+}
+.modalTitleCancel:hover{
+    color: red
+}
+
+.modalForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+.modalInputGroup{
+    display: flex;
+    flex-direction: column;
+}
+
+.modalLabel{
+    color: #000;
+font-family: 'Inter';
+font-size: 1.6rem;
+font-style: normal;
+font-weight: 300;
+line-height: normal;
+margin-bottom: 8px;
+}
+.modalInput{
+    background: #F1F1F1;
+    border: none;
+    height: 35px;
+    width: 100%;
+    margin-bottom: 24px;
+    padding: 0px 16px;
+    outline: none;
+}
+
+.modalButtons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.modalCancel{
+    width: 150px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    border: 1px solid #9D9D9D;
+    background: #FFF;
+    color: #9D9D9D;
+    font-family: 'Inter';
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.modalCancel:hover{
+    border-color: #525252;
+    color: #525252;
+    background-color: #FFF;
+}
+
+.modalCreate{
+    width: 150px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    border: none;
+    background: #3D86DD;
+    color: #FFF;
+    font-family: 'Inter';
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.modalCreate:hover{
+    background-color: #2147ad;
+}
+
+.header{
+    width: 100%;
+    height: 60px;
+    background-color: #FFF;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 40px
+}
+
+.container{
+    background-color: #f7f7f7;
+    width: 100%;
+    min-height: calc(100vh - 60px);
+    height: auto;
+    padding: 40px;
+    padding-bottom: calc(40px - 24px)
+}
+
+.containerTitle{
+    color: #000;
+font-family: Inter;
+font-size: 3.2rem;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+margin-bottom: 40px;
+}
+
+.containerGrid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 24px;
+}
+
+.storeButton{
+    margin-bottom: 24px;
+    height: 120px;
+    border: none;
+    border-radius: 8px;
+    background: #FFF;
+    color: #000;
+font-family: Inter;
+font-size: 2.4rem;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+padding: 10px;
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+}
+.storeButton:hover{
+    background-color: azure;
+}
+
+.zeroGrid{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.zeroTitle{
+    color: #000;
+font-family: 'Inter';
+font-size: 2.4rem;
+font-style: normal;
+font-weight: 300;
+line-height: normal;
+margin-bottom: 32px;
+}
+
+.zeroCreateButton{
+    background: #FFF;
+    width: 340px;
+    height: 120px;
+    border: none;
+    border-radius: 8px;
+    color: #000;
+font-family: 'Inter';
+font-size: 3.2rem;
+font-style: normal;
+font-weight: 200;
+line-height: normal;
+padding: 10px;
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+}
+
+.zeroCreateButton:hover{
+    background-color: azure;
+}
