@@ -4,8 +4,8 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 function Cadastro() {
-    // const apiUrl = 'https://donkey-api.vercel.app'
-    const apiUrl = 'http://localhost:8800'
+    const apiUrl = 'https://donkey-api.vercel.app'
+    // const apiUrl = 'http://localhost:8800'
     const navigate = useNavigate()
 
     const [username, setUsername] = useState('')

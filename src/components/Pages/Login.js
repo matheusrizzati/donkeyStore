@@ -4,7 +4,8 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 function Login(){
-    const apiUrl = 'http://localhost:8800'
+    // const apiUrl = 'http://localhost:8800'
+    const apiUrl = 'https://donkey-api.vercel.app'
     const navigate = useNavigate()
 
     const [username, setUsername] = useState('')
