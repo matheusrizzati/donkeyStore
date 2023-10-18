@@ -10,13 +10,15 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Cadastro from './components/Pages/Cadastro'
 import Login from './components/Pages/Login'
 import Stores from './components/Pages/Stores'
-import StorePainel from './components/Pages/StorePainel';
+import StorePainel from './components/Pages/StorePainel'
+import ClientStore from './components/Pages/ClientStore'
 
 const router = createBrowserRouter([
   {path:'/cadastro', element: <Cadastro/>},
   {path:'/login', element: <Login/>},
   {path:'/lojas', element: <Stores/>},
-  {path:'/lojas/:id', element: <StorePainel/>}
+  {path:'/lojas/:id', element: <StorePainel/>},
+  {path:'/:url', element: <ClientStore />}
 ])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

@@ -1,0 +1,90 @@
+.container{
+    width: 100%;
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+    box-shadow: 2px 0px 3px 0px rgba(0, 0, 0, 0.25);
+}
+.title{
+    color: #000;
+    font-family: "Inter";
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.paymentSection{
+    padding: 24px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.paymentLabel{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #000;
+    font-family: 'Inter';
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin-bottom: 12px;
+}
+
+.paymentLabel2{
+    color: #000;
+    font-family: 'Inter';
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal;
+    cursor: pointer;
+    margin-left: 8px;
+}
+.paymentLabel2:hover{
+    text-decoration: underline;
+    color: #181818
+}
+
+.paymentInput{
+    width: 100%;
+    max-width: 480px;
+    background: #FFF;
+    border: none;
+    border-radius: 6px;
+    border: 1px solid #aaaaaa;
+    min-height: 35px;
+    margin-bottom: 16px;
+    padding: 0px 16px;
+    outline: none;
+}
+.paymentInput:focus{
+    border: 1px solid #727272;
+}
+
+.paymentButton{
+    width: 100px;
+    height: 32px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    border: none;
+    background: #3D86DD;
+    color: #FFF;
+    font-family: 'Inter';
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.paymentButton:hover{
+    background-color: #2147ad;
+}

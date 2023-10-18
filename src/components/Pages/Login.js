@@ -4,8 +4,8 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 function Login(){
-    // const apiUrl = 'http://localhost:8800'
-    const apiUrl = 'https://donkey-api.vercel.app'
+    const apiUrl = 'http://localhost:8800'
+    // const apiUrl = 'https://donkey-api.vercel.app'
     const navigate = useNavigate()
 
     const [username, setUsername] = useState('')
@@ -18,7 +18,7 @@ function Login(){
             password,
         };
         try {
-            await fetch(`${apiUrl}/auth/login`, {
+            await fetch(`${apiUrl}/user/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -42,7 +42,7 @@ function Login(){
             <div className={styles.mainContainer}>
                 <img src={logo} alt='logo' className={styles.logo}/>
                 <h2 className={styles.h2}>Entre agora na sua conta</h2>
-                <h3 className={styles.h3}>Não tem uma? <u className={styles.h3} style={{cursor: 'pointer'}}>Clique Aqui</u></h3>
+                <h3 className={styles.h3}>Não tem uma? <u onClick={() => {navigate('/cadastro')}} className={styles.h3} style={{cursor: 'pointer'}}>Clique Aqui</u></h3>
                 <form className={styles.form} onSubmit={handleSubmit}>
                     <div className={styles.inputGroup}>
                         <label className={styles.label}>Username</label>

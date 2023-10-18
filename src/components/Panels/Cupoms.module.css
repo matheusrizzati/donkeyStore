@@ -1,0 +1,81 @@
+.container{
+    width: 100%;
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+    box-shadow: 2px 0px 3px 0px rgba(0, 0, 0, 0.25);
+}
+.title{
+    color: #000;
+    font-family: "Inter";
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.modalButton{
+    border: none;
+    padding: 10px 18px;
+    border-radius: 4px;
+    background: #3D86DD;
+    color: #FFF;
+    font-family: 'Inter';
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.checkbox{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+.checkbox label{
+    margin-bottom: 24px;
+    margin-left: 8px;
+}
+.checkbox input{
+    width: 25px;
+}
+
+.list{
+    width: 100%;
+}
+
+.item{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    align-items: center;
+    padding: 16px;
+    border-bottom: 1px dashed rgb(143, 143, 143);
+}
+.item .itemName:nth-child(1){
+    justify-self: start;
+}
+.item .itemName:nth-child(4){
+    justify-self: end;
+    font-family: 'Inter';
+    font-size: 2.4rem;
+    font-style: normal;
+    line-height: normal;
+    font-weight: 500;
+    color: #a10000;
+    cursor: pointer
+}
+.item .itemName:nth-child(4):hover{color: red}
+.itemName{
+        color: #2e2929;
+        font-family: "Inter";
+        font-size: 1.8rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+}

@@ -5,11 +5,13 @@
 }
 
 .sidebar{
-    width: fit-content;
+    min-width: fit-content;
+    width: 100%;
+    max-width: fit-content;
     background-color: #FFF;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -17,27 +19,89 @@
 .sidebarAction{
     margin: 32px 16px 20px 16px;
     width: fit-content;
+    cursor: pointer;
+}
+.sidebarAction:hover{
+    scale: 1.1;
 }
 
-.logo{
-    width: auto;
-    height: 200px;
+.menuSvg{
+    align-self: center;
+}
+
+.visitButton{
+    height: 35px;
+    width: 180px;
+    margin: 10px 16px;
+    border: none;
+    background-color: #3D86DD;
+    cursor: pointer;
+    border-radius: 8px;
+    font-family: 'Inter';
+    color: #FFF;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.visitButton:hover{
+    background-color: #2147ad;
+}
+
+.visitButton:disabled,
+button[disabled]{
+  background-color: #cccccc;
 }
 
 .sidebarMenu{
-    padding: 0px 16px;
+    width: 100%;
+    padding: 10px 16px;
 }
-
+.sidebarMenu:hover{
+    background-color: rgb(240, 240, 240);
+    cursor: pointer;
+}
+.sidebarmenuOpened{
+    width: 100%;
+    padding: 10px 16px;
+    background-color: rgb(240, 240, 240);
+    cursor: pointer;
+}
 .menuTitle{
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
+.menuTitle h2{
+    color: #000;
+    font-family: "Inter";
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
 .menuTitle .menuSvg{
     width: 24px;
     height: 24px;
+    margin-right: 8px;
+}
+
+.submenu{
+    width: 100%;
+    background-color: rgb(245, 245, 245);
+    cursor: pointer;
+}
+.submenuItem{
+    padding: 10px
+}
+.submenuItem:hover{
+    background-color: rgb(230, 230, 230);
 }
 
 .painel{
     background: #F7F7F7;
     width: 100%;
+    height: 100vh;
+    overflow-y: auto;
 }

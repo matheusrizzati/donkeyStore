@@ -1,0 +1,186 @@
+.over {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.70);
+}
+
+.container {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    min-width: 480px;
+    width: 480px;
+    min-height: 100%;
+    height: 100%;
+    padding: 24px;
+    background: #181818;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    height: 30px;
+}
+
+.headerTitle {
+    color: #FFF;
+    font-family: 'Inter';
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.headerClose{
+    color: #FFF;
+font-family: 'Inter';
+font-size: 2.6rem;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+cursor:pointer;
+}
+.headerClose:hover{
+    scale: 1.2
+}
+
+.itemList{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 205.5px);
+    overflow-y: auto;
+}
+
+.item{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 48px;
+    width: 100%;
+    align-items: center;
+}
+
+.itemImg{
+    width: 60px;
+    height: 60px;
+    background-color: #d9d9d9;
+    margin-right: 20px;
+}
+
+.itemPart{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.itemPart1{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;   
+}
+.itemPart2{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;   
+    justify-content: space-between;
+    padding-right: 8px;
+}
+
+.itemName{
+    color: #FFF;
+font-family: 'Inter';
+font-size: 2rem;
+font-style: normal;
+font-weight: 300;
+line-height: normal;
+margin-right: 20px;
+display: flex;
+flex-direction: row;
+align-items: center;
+}
+
+.operator{
+    color: #FFF;
+    font-family: 'Inter';
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-right: 8px;
+    margin-left: 8px;
+    cursor: pointer;
+}
+
+.itemPrice{
+    color: #FFF;
+font-family: 'Inter';
+font-size: 2rem;
+font-style: normal;
+font-weight: 300;
+line-height: normal;
+}
+.itemRemove{
+    color: #FFF;
+font-family: 'Inter';
+font-size: 1.8rem;
+font-style: normal;
+font-weight: 300;
+line-height: normal;
+cursor: pointer;
+text-decoration: underline;
+}
+
+.footer{
+    position: absolute;
+    background-color: #181818;
+    z-index: 10;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+}
+
+.subtotal{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    width: 100%;
+}
+
+.subtotalTitle{
+    color: #FFF;
+font-family: 'Inter';
+font-size: 2.2rem;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+}
+
+.subtotalValue{
+    color: #FFF;
+font-family: 'Inter';
+font-size: 2.2rem;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.checkoutButton{
+    background-color: #3D86DD;
+    height: 45px;
+    border: none;
+    border-radius: 4px;
+    color: #FFF;
+font-family: 'Inter';
+font-size: 2.2rem;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}

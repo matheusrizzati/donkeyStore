@@ -1,0 +1,130 @@
+body{
+    background: #f7f7f7;
+}
+
+.header{
+    height: 70px;
+    background-color: #FFF;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 32px
+}
+
+.headerLogo{
+    color: #000;
+    font-family: 'Inter';
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    cursor: pointer;
+}
+.headerLogo:hover{
+    color: #181818;
+}
+
+.categorys{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+
+.categoryItem{
+    color: #000;
+    font-family: 'Inter';
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+}
+
+.categoryItem:hover{
+    color: #181818;
+    text-decoration: underline;
+}
+
+.cart{
+    cursor: pointer;
+    color: #FFF;
+    font-family: 'Inter';
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.cart:hover{color: #181818;}
+
+.main{
+    display: grid;
+    grid-template-columns: repeat(4, 285px);
+    padding: 40px;
+    justify-content: space-between;
+    background: #F7F7F7;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.itemContainer{
+    border-radius: 8px;
+    background: #FFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.title{
+    color: #000;
+    font-family: 'Inter';
+    font-size: 2.2rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: center;
+    padding: 8px;
+    margin-top: 8px;
+    margin-bottom: auto;
+}
+
+.image{
+    background-color: #FFF;
+    height: 200px;
+    width: 100%;
+    color: #000;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.price{
+    color: #000;
+    font-family: 'Inter';
+    font-size: 2.2rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding: 8px;
+}
+
+.addCart{
+    border: none;
+    border-radius: 8px;
+    background: #3CD955;
+    height: 40px;
+    width: calc(100% - 16px);
+    margin-bottom: 16px;
+    color: #FFF;
+    font-family: 'Inter';
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.addCart:hover{
+    background: #20a336;
+}

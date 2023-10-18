@@ -4,8 +4,8 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 function Cadastro() {
-    const apiUrl = 'https://donkey-api.vercel.app'
-    // const apiUrl = 'http://localhost:8800'
+    // const apiUrl = 'https://donkey-api.vercel.app'
+    const apiUrl = 'http://localhost:8800'
     const navigate = useNavigate()
 
     const [username, setUsername] = useState('')
@@ -20,7 +20,7 @@ function Cadastro() {
             confirmPassword,
         };
         try {
-            await fetch(`${apiUrl}/auth/createUser`, {
+            await fetch(`${apiUrl}/user/createUser`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -43,7 +43,7 @@ function Cadastro() {
             <div className={styles.mainContainer}>
                 <img src={logo} alt='logo' className={styles.logo} />
                 <h2 className={styles.h2}>Crie agora sua conta</h2>
-                <h3 className={styles.h3}>Já tem uma? <u className={styles.h3} style={{ cursor: 'pointer' }}>Clique Aqui</u></h3>
+                <h3 className={styles.h3}>Já tem uma? <u onClick={() => {navigate('/login')}} className={styles.h3} style={{ cursor: 'pointer' }}>Clique Aqui</u></h3>
                 <form className={styles.form} onSubmit={handleSubmit}>
                     <div className={styles.inputGroup}>
                         <label className={styles.label}>Username</label>
