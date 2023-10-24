@@ -75,10 +75,11 @@ body{
     flex-direction: column;
     align-items: center;
     margin-bottom: 24px;
+    height: fit-content;
 }
 
 .title{
-    color: #FFF;
+    color: #fff;
     font-family: 'Inter';
     font-size: 2.2rem;
     font-style: normal;
@@ -99,6 +100,8 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    object-fit: contain;
+    margin-bottom: 12px;
 }
 
 .price{

@@ -12,13 +12,15 @@ import Login from './components/Pages/Login'
 import Stores from './components/Pages/Stores'
 import StorePainel from './components/Pages/StorePainel'
 import ClientStore from './components/Pages/ClientStore'
+import Checkout from './components/Pages/storeLayouts/Checkout'
 
 const router = createBrowserRouter([
   {path:'/cadastro', element: <Cadastro/>},
   {path:'/login', element: <Login/>},
   {path:'/lojas', element: <Stores/>},
   {path:'/lojas/:id', element: <StorePainel/>},
-  {path:'/:url', element: <ClientStore />}
+  {path:'/:url', element: <ClientStore />},
+  {path:'/checkout', element: <Checkout />}
 ])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

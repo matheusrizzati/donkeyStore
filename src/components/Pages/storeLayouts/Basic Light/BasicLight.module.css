@@ -59,6 +59,7 @@ body{
 
 .main{
     display: grid;
+    min-height: calc(100vh - 70px);
     grid-template-columns: repeat(4, 285px);
     padding: 40px;
     justify-content: space-between;
@@ -74,6 +75,7 @@ body{
     flex-direction: column;
     align-items: center;
     margin-bottom: 24px;
+    height: fit-content;
 }
 
 .title{
@@ -98,6 +100,8 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    object-fit: contain;
+    margin-bottom: 12px;
 }
 
 .price{

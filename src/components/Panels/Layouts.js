@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
 import styles from './Layouts.module.css'
+import apiUrl from '../../apiUrl'
 
 function Layouts(props){
-    const apiUrl = 'http://localhost:8800'
     const [layouts, setLayouts] = useState([])
     const [selectedLayout, setSelectedLayout] = useState('')
 

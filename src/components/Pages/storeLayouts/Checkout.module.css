@@ -1,0 +1,327 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100%;
+    /* background-color: #181818; */
+}
+
+.resumeContainer{
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px;
+}
+
+.list{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    margin-bottom: 32px;
+    /* max-width: 500px; */
+}
+
+.item{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.itemImg{
+    width: 50px;
+    height: 50px;
+    background-color: grey;
+    border-radius: 4px;
+    margin-right: 8px;
+}
+
+.itemPart{
+    width: inherit;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.itemPart1{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.itemPart2{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;   
+}
+
+.itemName{
+    color: #000;
+    font-family: 'Inter';
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.itemName2{
+    color: #000;
+    font-family: 'Inter';
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.cupom{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    margin-bottom: 4px;
+}
+.cupom > input{
+    width: 100%;
+    background: #FFF;
+    border: none;
+    border-radius: 6px;
+    border: 1px solid #aaaaaa;
+    min-height: 35px;
+    padding: 0px 16px;
+    outline: none;
+}
+.cupom > input:focus{
+    border: 1px solid blue;
+}
+
+.cupom > button{
+    width: 120px;
+    height: 35px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    border: none;
+    background: #3D86DD;
+    color: #FFF;
+    font-family: 'Inter';
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+}
+
+.cupom > button:hover{
+    background: #2760a5;
+}
+
+.cupomError{
+    width: 100%;
+    color: #b43636;
+    font-family: 'Inter';
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.stepContainer{
+    width: 50%;
+    height: 100vh;
+    box-shadow: 80px 80px 80px black;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.stepProgress{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.stepProgressItem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stepProgressItem > div{
+    background-color: grey;
+    border-radius: 50px;
+    width: 25px;
+    height: 25px;
+    margin-bottom: 4px;
+}
+
+.stepProgressItem > h2, .stepProgressItemSelected > h2{
+    color: #000;
+    font-family: 'Inter';
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.stepProgressItemSelected{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stepProgressItemSelected > div{
+    background-color: #3D86DD;
+    border-radius: 50px;
+    width: 25px;
+    height: 25px;
+    margin-bottom: 4px;
+}
+
+.step{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.step > label{
+    color: #000;
+    font-family: 'Inter';
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin-bottom: 4px;
+}
+
+.step > input {
+    background: #F1F1F1;
+    font-size: 1.6rem;
+    border: none;
+    min-height: 35px;
+    width: 100%;
+    margin-bottom: 24px;
+    padding: 0px 16px;
+    outline: none;
+}
+
+.step > div{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.step > div > button {
+    width: 120px;
+    height: 35px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    border: none;
+    background: #3D86DD;
+    color: #FFF;
+    font-family: 'Inter';
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+}
+.step > div > button:hover{
+    background: #2760a5;
+}
+.step > div > button:disabled{
+    background: #969da7;
+    cursor: not-allowed;
+}
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 32px;
+}
+
+.subtotal{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.subtotal > h2{
+    color: #000;
+    font-family: 'Inter';
+    font-size: 1.9rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.footerCupom{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    border-top: 1px dashed rgb(0,0,0,0.3);
+}
+
+.footerCupom > div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.footerCupom > div > h2{
+    color: #000;
+    font-family: 'Inter';
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.footerCupom > h2{
+    color: #b82323;
+    font-family: 'Inter';
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+.cupomRemove{
+    margin-right: 8px;
+    color: #b82323;
+    font-family: 'Inter';
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+}
+.cupomRemove:hover{
+    font-weight: 500;
+    scale: 1.1
+}   
+
+.total{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    border-top: 1px solid rgb(0, 0, 0, 0.3);
+}
+
+.total > h2{
+    color: #000;
+    font-family: 'Inter';
+    font-size: 1.9rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}

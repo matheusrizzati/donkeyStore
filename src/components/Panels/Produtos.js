@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import styles from './Cupoms.module.css'
 import modalStyles from '../items/Modal.module.css'
+import axios from 'axios'
 
 function Produtos(props) {
     const apiUrl = 'http://localhost:8800'
@@ -13,6 +14,7 @@ function Produtos(props) {
     const [categorys, setCategorys] = useState([])
     const [category, setCategory] = useState(null)
     const [isActive, setIsActive] = useState(true)
+    const [image, setImage] = useState()
 
     const fetchProdutos = async () => {
         try {
@@ -49,15 +51,26 @@ function Produtos(props) {
             setQuantity(null)
         }
 
+        const formData = new FormData()
+        formData.append('name', name)
+        formData.append('price', price)
+        formData.append('limited', limited)
+        formData.append('quantity', quantity)
+        formData.append('category', category)
+        formData.append('isActive', isActive)
+        formData.append('file', image)
+        formData.append('storeId', props.storeData._id)
         const body = {
-            name, price, limited, quantity, category, isActive, storeId: props.storeData._id
+            name, price, limited, quantity, category, isActive, image, storeId: props.storeData._id
         }
 
-        fetch(`${apiUrl}/product`, {
-            method: 'POST',
-            headers: { 'authorization': `${props.token}`, 'Content-Type': 'application/json' },
-            body: JSON.stringify(body)
-        }).then(res => res.json()).then((data) => {alert(data.msg); setModal(false)})
+        axios.post(`${apiUrl}/product`, formData, {headers: {authorization: props.token}}).then(res => console.log(res))
+
+    //     fetch(`${apiUrl}/product`, {
+    //         method: 'POST',
+    //         headers: { 'authorization': `${props.token}`, 'Content-Type': 'application/json' },
+    //         body: formData
+    //     }).then(res => res.json()).then((data) => {alert(data.msg); setModal(false)})
     }
 
     const deleteProduct = async(id) => {
@@ -95,6 +108,9 @@ function Produtos(props) {
                                 <select className={modalStyles.modalInput} value={category} onChange={(e)=>{setCategory(e.target.value)}}>
                                     {categorys.map(item => (<option value={item._id}>{item.name}</option>))}
                                 </select>
+                                <label className={modalStyles.modalLabel}>Imagem do produto</label>
+                                {/* <input type='file' onChange={(e) => {setImage(e.target.files[0])}} /> */}
+                                <input className={modalStyles.modalUpload} type="file" accept="image/*" onChange={(e) => {setImage(e.target.files[0])}}/>
                                 <div className={styles.checkbox}>
                                 <input type='checkbox' className={modalStyles.modalInput} checked={isActive} onChange={(e) => { setIsActive(!isActive) }} />
                                 <label className={modalStyles.modalLabel}>Produto ativo</label>

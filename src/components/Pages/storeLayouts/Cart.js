@@ -1,9 +1,12 @@
 import { useEffect, useState } from 'react'
 import styles from './Cart.module.css'
+import apiUrl from '../../../apiUrl'
+import { useNavigate } from 'react-router-dom'
 
 function Cart(props) {
+    const navigate = useNavigate()
     const [itens, setItens] = useState([])
-
+    const subtotal = itens.reduce((acc, item) => acc + (item.quantity * item.price), 0)
     function getCartItens() {
         const produtos = localStorage.getItem(`cart${props.storeData._id}`)
         if (produtos === null) {
@@ -73,9 +76,9 @@ function Cart(props) {
                     <footer className={styles.footer}>
                     <div className={styles.subtotal}>
                         <h2 className={styles.subtotalTitle}>Subtotal:</h2>
-                        <h2 className={styles.subtotalValue}>R$ {itens.reduce((acc, item) => acc + (item.quantity * item.price), 0).toFixed(2)}</h2>
+                        <h2 className={styles.subtotalValue}>R$ {subtotal.toFixed(2)}</h2>
                     </div>
-                    <button className={styles.checkoutButton}>Finalizar compra</button>
+                    <button className={styles.checkoutButton} onClick={() => {navigate("/checkout", {state:{subtotal, itens}})}}>Finalizar compra</button>
                     </footer>
             </div>
         </div>

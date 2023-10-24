@@ -84,6 +84,15 @@ margin-bottom: 8px;
     outline: none;
 }
 
+.modalUpload{
+    display: flex;
+    flex-direction: row;
+    min-height: 25px;
+    width: 280px;
+    margin-bottom: 24px;
+    cursor: pointer;
+}
+
 .modalButtons{
     display: flex;
     flex-direction: row;
