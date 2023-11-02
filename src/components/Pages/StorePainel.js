@@ -6,6 +6,7 @@ import Categorias from "../Panels/Categorias"
 import Cupoms from "../Panels/Cupoms"
 import Layouts from "../Panels/Layouts"
 import Configuracoes from "../Panels/Configuracoes"
+import apiUrl from "../../apiUrl"
 const openMenuSVG = <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M10.6667 6.85339V25.5201L25.3333 16.1867L10.6667 6.85339Z" fill="#878787"/></svg>
 const closeMenuSVG = <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -17,23 +18,19 @@ const menuMinhaLojaSVG = <svg className={styles.menuSvg} width="32" height="32" 
 
 function StorePainel(){
     const location = useLocation()
-    const apiUrl = 'http://localhost:8800'
-    // const apiUrl = 'https://donkey-api.vercel.app'
     const url = window.location.search
-    let code, storeId, panelState, state
+    let storeId, panelState, state
     if (location.state) {
         storeId = location.state
     }
     if(url){
         const urlParams = new URLSearchParams(url)
-        code = urlParams.get('code')
         state = urlParams.get('state').split("-")
         if (state){
             storeId = state[0]
             panelState = state[1]
         }
     }
-    // const state = urlParams.get('state').split("-")
     useEffect(() => {
         if (!token)
             return navigate("/login")
@@ -84,7 +81,7 @@ function StorePainel(){
     
     return(
         <div className={styles.container}>
-            {console.log(storeId, code, panelState)}
+            {/* {console.log(storeId, panelState)} */}
             <menu className={styles.sidebar}>
                 {(menuOpen)?<h1 className={styles.sidebarAction} onClick={closeMenu}>{closeMenuSVG}</h1>:<h1 className={styles.sidebarAction} onClick={() => {setMenuOpen(true)}}>{openMenuSVG}</h1>}
                 {menuOpen && <button disabled={!myStore.isActive} className={styles.visitButton} onClick={() => {navigate(`/${myStore.url}`)}}>Visitar minha loja</button>}
