@@ -20,16 +20,18 @@ function StorePainel(){
     const apiUrl = 'http://localhost:8800'
     // const apiUrl = 'https://donkey-api.vercel.app'
     const url = window.location.search
-    let code, storeId, panelState
+    let code, storeId, panelState, state
     if (location.state) {
         storeId = location.state
     }
     if(url){
         const urlParams = new URLSearchParams(url)
         code = urlParams.get('code')
-        const state = urlParams.get('state').split("-")
-        storeId = state[0]
-        panelState = state[1]
+        state = urlParams.get('state').split("-")
+        if (state){
+            storeId = state[0]
+            panelState = state[1]
+        }
     }
     // const state = urlParams.get('state').split("-")
     useEffect(() => {
@@ -57,9 +59,7 @@ function StorePainel(){
     },[])
 
     useEffect(() => {
-        if (code !== null && state !== null){
-            setPainel(state)
-        }
+        setPainel(panelState)
     }, [])
 
     const renderPainel = (param) => { 
@@ -84,6 +84,7 @@ function StorePainel(){
     
     return(
         <div className={styles.container}>
+            {console.log(storeId, code, panelState)}
             <menu className={styles.sidebar}>
                 {(menuOpen)?<h1 className={styles.sidebarAction} onClick={closeMenu}>{closeMenuSVG}</h1>:<h1 className={styles.sidebarAction} onClick={() => {setMenuOpen(true)}}>{openMenuSVG}</h1>}
                 {menuOpen && <button disabled={!myStore.isActive} className={styles.visitButton} onClick={() => {navigate(`/${myStore.url}`)}}>Visitar minha loja</button>}
