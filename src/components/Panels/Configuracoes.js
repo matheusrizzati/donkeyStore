@@ -29,7 +29,7 @@ function Configuracoes(props){
     }
 
     function mercadopagoConnect(){
-        window.location.assign(`https://auth.mercadopago.com/authorization?client_id=7368581066289116&response_type=code&platform_id=mp&s&state=${props.storeData._id}-configuracoes&redirect_uri=https://donkey-store.vercel.app/`);
+        window.location.assign(`https://auth.mercadopago.com/authorization?client_id=7368581066289116&response_type=code&platform_id=mp&s&state=${props.storeData._id}-configuracoes&redirect_uri=https://donkey-store.vercel.app/painel`);
     }
 
     return (
