@@ -22,7 +22,7 @@ function Checkout() {
 
     function addCupom() {
         fetch(`${apiUrl}/cupom?name=${cupomCode}`).then(setCupomError(false)).then(res => res.json()).then((data) => { if (data.length === 0) { setCupomError(true) } else { setCupomData(data[0]); setCupomError(false) } })
-    }
+    } 
 
     return (
         <div className={styles.container}>
@@ -77,11 +77,11 @@ function Checkout() {
                         <div />
                         <h2>Dados</h2>
                     </div>
-                    <h2>-</h2>
-                    <div onClick={(!name || !email || !cpf || !serverId) ? () => {alert("Preencha seus dados para prosseguir")} : () => { setStep(2) }} style={(!name || !email || !cpf || !serverId) ? {cursor: 'not-allowed'}: {cursor: 'pointer'}} className={(step >= 2 ? styles.stepProgressItemSelected : styles.stepProgressItem)}>
+                    {/* <h2>-</h2> */}
+                    {/* <div onClick={(!name || !email || !cpf || !serverId) ? () => {alert("Preencha seus dados para prosseguir")} : () => { setStep(2) }} style={(!name || !email || !cpf || !serverId) ? {cursor: 'not-allowed'}: {cursor: 'pointer'}} className={(step >= 2 ? styles.stepProgressItemSelected : styles.stepProgressItem)}>
                         <div/>
                         <h2>Pagamento</h2>
-                    </div>
+                    </div> */}
                 </div>
                 {step === 1 && <div className={styles.step}>
                     <label>Nome</label>
@@ -96,9 +96,9 @@ function Checkout() {
                     <button disabled={!name || !email || !cpf || !serverId} onClick={() => { setStep(2) }}>Proximo</button>
                     </div>
                 </div>}
-                {step === 2 && <div>
+                {/* {step === 2 && <div>
                     <h2>Step 2</h2>
-                </div>}
+                </div>} */}
             </div>
         </div>
     )

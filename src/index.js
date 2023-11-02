@@ -18,7 +18,7 @@ const router = createBrowserRouter([
   {path:'/cadastro', element: <Cadastro/>},
   {path:'/login', element: <Login/>},
   {path:'/lojas', element: <Stores/>},
-  {path:'/lojas/:id', element: <StorePainel/>},
+  {path:'/painel', element: <StorePainel/>},
   {path:'/:url', element: <ClientStore />},
   {path:'/checkout', element: <Checkout />}
 ])

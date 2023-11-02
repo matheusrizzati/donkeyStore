@@ -96,7 +96,7 @@ function Stores(){
             {stores.length !== 0 ?
             (
                 <div className={styles.containerGrid}>
-                    {stores.map(item => (<button key={item._id} className={styles.storeButton} onClick={() => {navigate("/lojas/"+item._id)}}>{item.storeName}</button>))}
+                    {stores.map(item => (<button key={item._id} className={styles.storeButton} onClick={() => {navigate("/painel", {state:item._id})}}>{item.storeName}</button>))}
                     <button className={styles.storeButton} onClick={()=>{setModal(true)}}>{addSvg}Criar loja</button>
                 </div>
             ):

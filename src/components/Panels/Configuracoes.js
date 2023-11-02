@@ -28,6 +28,10 @@ function Configuracoes(props){
         )
     }
 
+    function mercadopagoConnect(){
+        window.location.assign(`https://auth.mercadopago.com/authorization?client_id=7368581066289116&response_type=code&platform_id=mp&s&state=${props.storeData._id}-configuracoes&redirect_uri=https://donkey-store.vercel.app/`);
+    }
+
     return (
         <div className={styles.container}>
             <header className={styles.header}>
@@ -36,8 +40,7 @@ function Configuracoes(props){
             <main className={styles.mainContainer}>
                 <div className={styles.paymentSection}>
                     <h2 className={styles.paymentLabel}>Email do MercadoPago<h3 className={styles.paymentLabel2}> Não tem conta? Clique e crie uma</h3></h2>
-                    <input type='text' value={paymentConfig} onChange={(e) => {setPaymentConfig(e.target.value)}} className={styles.paymentInput}/>
-                    <button onClick={savePaymentConfig} className={styles.paymentButton}>Salvar</button>
+                    <button onClick={mercadopagoConnect} className={styles.paymentButton}>Conectar com o MercadoPago</button>
                 </div>
             </main>
         </div>
