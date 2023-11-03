@@ -7,6 +7,7 @@ import axios from 'axios';
 
 function Checkout() {
     const location = useLocation();
+    const storeData = location.state.storeData
     const itens = location.state.itens
     const subtotal = location.state.subtotal
 
@@ -23,6 +24,42 @@ function Checkout() {
     function addCupom() {
         fetch(`${apiUrl}/cupom?name=${cupomCode}`).then(setCupomError(false)).then(res => res.json()).then((data) => { if (data.length === 0) { setCupomError(true) } else { setCupomData(data[0]); setCupomError(false) } })
     } 
+
+    function createPreference(){
+    console.log("preference")
+
+    let body = {
+        items: 
+            itens.map((item) => {return {
+                id: item.id,
+                title: item.name,
+                picture_url: item.image,
+                quantity: item.quantity,
+                unit_price: item.price,
+                currency_id: 'BRL'
+            }}),
+        payer:{
+            name,
+            email
+        },
+        back_urls:{
+            success: 'http://localhost:3000/checkout',
+            failure: '',
+            pending: ''
+        },
+        auto_return: 'approved',
+        binary_mode: true,
+    }
+
+        fetch('https://api.mercadopago.com/checkout/preferences', {
+            method: "POST",
+            headers: {
+                'Authorization': 'Bearer ' +  `${storeData.paymentConfig}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(body)
+        }).then(res => res.json()).then(data => window.location.assign(data.init_point))
+    }
 
     return (
         <div className={styles.container}>
@@ -88,12 +125,12 @@ function Checkout() {
                     <input type='text' value={name} onChange={(e) => {setName(e.target.value)}}/>
                     <label>Email</label>
                     <input type='text' value={email} onChange={(e) => {setEmail(e.target.value)}}/>
-                    <label>CPF</label>
-                    <input type='text' maxLength={14} value={cpf} onChange={(e) => {setCpf(maskCPF(e.target.value))}}/>
+                    {/* <label>CPF</label>
+                    <input type='text' maxLength={14} value={cpf} onChange={(e) => {setCpf(maskCPF(e.target.value))}}/> */}
                     <label>ID no servidor</label>
                     <input type='text' value={serverId} onChange={(e) => {setServerId(e.target.value)}}/>
                     <div>
-                    <button disabled={!name || !email || !cpf || !serverId} onClick={() => { setStep(2) }}>Proximo</button>
+                    <button disabled={!name || !email || !serverId} onClick={createPreference}>Realizar pagamento</button>
                     </div>
                 </div>}
                 {/* {step === 2 && <div>

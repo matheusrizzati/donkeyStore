@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
 import styles from './Cupoms.module.css'
 import modalStyles from '../items/Modal.module.css'
+import apiUrl from '../../apiUrl'
 import axios from 'axios'
 
 function Produtos(props) {
-    const apiUrl = 'http://localhost:8800'
     const [produtos, setProdutos] = useState([])
     const [modal, setModal] = useState(false)
     const [name, setName] = useState('')
@@ -64,7 +64,7 @@ function Produtos(props) {
             name, price, limited, quantity, category, isActive, image, storeId: props.storeData._id
         }
 
-        axios.post(`${apiUrl}/product`, formData, {headers: {authorization: props.token}}).then(res => console.log(res))
+        axios.post(`${apiUrl}/product`, formData, {headers: {authorization: props.token}}).then(res => setModal(false))
 
     //     fetch(`${apiUrl}/product`, {
     //         method: 'POST',

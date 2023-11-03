@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 import styles from './Categorias.module.css'
 import modalStyles from '../items/Modal.module.css'
+import apiUrl from '../../apiUrl'
 
 function Categorias(props) {
-    const apiUrl = 'http://localhost:8800'
     const [categorys, setCategorys] = useState([])
     const [modal, setModal] = useState(false)
     const [name, setName] = useState('')

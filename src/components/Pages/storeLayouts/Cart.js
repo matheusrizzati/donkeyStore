@@ -78,7 +78,7 @@ function Cart(props) {
                         <h2 className={styles.subtotalTitle}>Subtotal:</h2>
                         <h2 className={styles.subtotalValue}>R$ {subtotal.toFixed(2)}</h2>
                     </div>
-                    <button className={styles.checkoutButton} onClick={() => {navigate("/checkout", {state:{subtotal, itens}})}}>Finalizar compra</button>
+                    <button className={styles.checkoutButton} onClick={() => {navigate("/checkout", {state:{storeData: props.storeData,subtotal, itens}})}}>Finalizar compra</button>
                     </footer>
             </div>
         </div>
